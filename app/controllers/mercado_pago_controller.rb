@@ -2,8 +2,7 @@ class MercadoPagoController < ApplicationController
   API_URL = 'https://api.mercadopago.com/v1/'
 
   def get (resource, params = nil)
-    uri = API_URL + resource
-    uri = params ? uri + "?" + params : uri
+    uri = API_URL + resource + "?" + params
 
     puts "GET Request - URL: " + uri
 
