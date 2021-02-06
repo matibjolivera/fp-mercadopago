@@ -3,6 +3,7 @@ class PaymentsController < MercadoPagoController
 
   def show
     request = PAYMENTS_URL + params[:id] + '?access_token=' + ENV['ACCESS_TOKEN']
-    puts RestClient.get(request)
+    @result = get(request)
+    render "index"
   end
 end
