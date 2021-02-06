@@ -1,9 +1,15 @@
 class PaymentsController < MercadoPagoController
-  PAYMENTS_URL = BASE_URL + 'payments/'
+  PAYMENTS_URL = API_URL + 'payments/'
 
   def show
-    request = PAYMENTS_URL + params[:id] + '?access_token=' + ENV['ACCESS_TOKEN']
-    @result = get(request)
+    request = PAYMENTS_URL + params[:id]
+    @result = get(request, null)
+    render "index"
+  end
+
+  def index
+    resource = PAYMENTS_URL
+    @result = get(resource, get_url_params)
     render "index"
   end
 end
