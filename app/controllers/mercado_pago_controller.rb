@@ -16,7 +16,7 @@ class MercadoPagoController < ApplicationController
     url_params = ""
     i = 0
     params.except(:controller, :action).each do |key, value|
-      separator = i == 0 ? "?" : "&"
+      separator = i == 0 ? "" : "&"
       url_params += separator + key.to_s + "=" + value.to_s
       i += 1
     end
