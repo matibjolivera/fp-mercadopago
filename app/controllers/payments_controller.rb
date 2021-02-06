@@ -8,7 +8,7 @@ class PaymentsController < MercadoPagoController
   end
 
   def index
-    resource = PAYMENTS_RESOURCE
+    resource = PAYMENTS_RESOURCE + "search"
     @result = get(resource, get_url_params)
     render "index"
   end
