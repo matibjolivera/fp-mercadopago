@@ -3,7 +3,7 @@ class PaymentsController < MercadoPagoController
 
   def show
     request = PAYMENTS_URL + params[:id]
-    @result = get(request, null)
+    @result = get(request)
     render "index"
   end
 
